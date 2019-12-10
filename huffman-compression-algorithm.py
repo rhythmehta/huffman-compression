@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
-
-
 ###utility function for downloading a text file from a URL. 
 from urllib.request import urlopen
 import shutil
@@ -22,10 +19,6 @@ url = "http://www.gutenberg.org/ebooks/"
 filename = "100.txt.utf-8"
 
 download_file(url, filename)
-
-
-# In[2]:
-
 
 from bitarray import bitarray #https://pypi.org/project/bitarray/
 
@@ -84,9 +77,6 @@ def get_bitarray(node):
     return bitarray(string)
 
 
-# In[3]:
-
-
 ###building Huffman code, making use of get_bitarray and the module heapq
 
 import heapq
@@ -128,9 +118,6 @@ def encode(symb2freq):
     for n in heap:
         bitsmap[n.symb] = get_bitarray(n)
     return bitsmap
-
-
-# In[4]:
 
 
 from collections import defaultdict 
@@ -179,9 +166,6 @@ def decompress(filename, decompressed_name=None):
         f.write(bytes(output))
 
 
-# In[5]:
-
-
 ###application
 
 filename='100.txt.utf-8.txt'
@@ -191,9 +175,5 @@ compress(filename, encoding, compressed_name="100.txt.utf-8.txt.huff")
 decompress("100.txt.utf-8.txt.huff", decompressed_name="100.txt.utf-8.txt.huff.dehuff.txt")
 
 
-# In[ ]:
-
-
 # Original/Decompressed: 5.6MB
 # Compressed: 3.3MB
-
