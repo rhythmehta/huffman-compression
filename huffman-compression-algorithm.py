@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-###utility function for downloading a text file from a URL. 
+### utility function for downloading a text file from a URL. 
 from urllib.request import urlopen
 import shutil
 import gzip
@@ -166,7 +166,7 @@ def decompress(filename, decompressed_name=None):
         f.write(bytes(output))
 
 
-###application
+### Application
 
 filename='100.txt.utf-8.txt'
 frequency = build_freq(filename)
